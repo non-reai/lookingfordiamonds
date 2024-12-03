@@ -37,6 +37,10 @@ io.on('connection', (socket)=>{
         io.to(currentRoom).emit('set_dream', playerId)
     })
 
+    socket.on('set_username', (username)=>{
+        io.to(currentRoom).emit('set_username', username)
+    })
+
     socket.on('movement', position => {
         io.to(currentRoom).emit('movement', position)
     })
